@@ -120,6 +120,17 @@ def arithmetic_arranger(problems, show_answers=False):
 
 def check_input_string(problem):
     # Check if the input matches the overall pattern
+    '''
+      REGEX
+      ^ denotes the start of the string.
+      \d{1,4} matches between 1 and 4 digits.
+      \s matches a space.
+      [+-] matches either a plus or minus sign.
+      \s matches a space.
+      \d{1,4} matches between 1 and 4 digits again.
+      $ denotes the end of the string.
+
+    '''
     if not re.match(r'^\d{1,4}\s[+-]\s\d{1,4}$', problem) and problem.split()[1] in ['+', '-'] and len(problem.split()[0]) <= 4 and len(problem.split()[2]) <= 4:
         return 'Error: Numbers must only contain digits.'
 
